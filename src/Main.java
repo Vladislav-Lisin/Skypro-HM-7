@@ -4,17 +4,21 @@ public class Main {
     public static void main(String[] args) {
 
         //task 1
-        int summ = 0;
+        int sum = 0;
         int month = 0;
-        while (summ < 2_459_000) {
+        int finalGoal = 2_459_000;
+        int monthlyContribution = 15_000;
+        while (sum < finalGoal) {
             month += 1;
-            summ += 15_000;
+            sum += monthlyContribution;
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + sum + "рублей");
 
         }
-        System.out.println("Месяц " + month + ", сумма накоплений равна " + summ + "рублей");
+
 
 
         //task 2
+        System.out.println();
         int i = 1;
         while (i <= 10) {
             System.out.print(i + " ");
@@ -28,56 +32,60 @@ public class Main {
 
         //task 3
         System.out.println();
-        int y = 12_000_000;
+        finalGoal = 12_000_000;
         for (i = 1; i <= 10; i++) {
-            y += (y / 1000 * 17);
-            y -= (y / 1000 * 8);
-            System.out.println("Год " + i + ", численность населения составляет " + y);
+            finalGoal += (finalGoal / 1000 * 17);
+            finalGoal -= (finalGoal / 1000 * 8);
+            System.out.println("Год " + i + ", численность населения составляет " + finalGoal);
         }
 
         //task 4
         System.out.println();
         month = 0;
-        float itog = 0f;
+        float total = 0f;
+        finalGoal = 12_000_000;
+        float interestRate = 1.07f;
         do {
             month += 1;
-            itog += 15_000;
-            itog *= 1.07f;
-            System.out.println("Год " + month + ", численность населения составляет " + itog);
-        } while (itog <= 12_000_000);
+            total += monthlyContribution;
+            total *= interestRate;
+            System.out.println("Год " + month + ", численность населения составляет " + total);
+        } while (total <= finalGoal);
 
         //task 5
         System.out.println();
         month = 0;
-        itog = 0f;
+        total = 0f;
         do {
             month += 1;
-            itog += 15_000;
-            itog *= 1.07f;
+            total += monthlyContribution;
+            total *= interestRate;
             if (month % 6 == 0) {
-                System.out.println("Год " + month + ", численность населения составляет " + itog);
+                System.out.println("Год " + month + ", численность населения составляет " + total);
             }
-        } while (itog <= 12_000_000);
+        } while (total <= finalGoal);
 
         //task 6
         System.out.println();
         month = 0;
-        itog = 0f;
+        total = 0f;
         do {
             month += 1;
-            itog += 15_000;
-            itog *= 1.07f;
+            total += monthlyContribution;
+            total *= interestRate;
             if (month % 6 == 0) {
-                System.out.println("Год " + month + ", численность населения составляет " + itog);
+                System.out.println("Год " + month + ", численность населения составляет " + total);
             }
         } while (month != 12 * 9);
 
         //task 7
         System.out.println();
         int firstFriday = 1;
-        while (firstFriday <= 31) {
+        int countOfAllDays = 31;
+        int everyFriday = 7;
+        while (firstFriday <= countOfAllDays) {
             System.out.println("Сегодня пятница, " + firstFriday + "-е число. Необходимо подготовить отчет");
-            firstFriday += 7;
+            firstFriday += everyFriday;
         }
 
         //task 8
@@ -85,12 +93,14 @@ public class Main {
         int start = 2024 - 200;
         int end = 2024 + 100;
         int year = 0;
+        int cometArrivalReplay = 79;
         while (year <= end) {
             if (year >= start) {
                 System.out.println(year);
             }
-            year += 79;
+            year += cometArrivalReplay;
         }
+        System.out.println();
 
     }
 }
